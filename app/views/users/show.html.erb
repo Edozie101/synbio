@@ -1,0 +1,12 @@
+<h1>User: <%= @user.name %></h1>
+
+<p>
+  <strong>Info</strong>
+</p>
+
+<p><%= @user.email %></p>
+
+<%= link_to "All Users", controller: "admin" , action: "index" %>
+<% if user_signed_in? %>
+  <%= @planga.chat_snippet.html_safe %>
+<% end %>

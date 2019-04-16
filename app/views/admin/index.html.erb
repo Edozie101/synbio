@@ -1,0 +1,33 @@
+<table>
+<thead>
+ <tr>
+    <th>
+        User Name
+    </th>
+
+    <th>
+        User email
+    </th>
+
+    <th>
+        Company
+    </th>
+</tr>
+</thead>
+
+    <tbody>
+        <% @users.each do |user| %>
+            <tr>
+             <td> <%=user.name %></td>
+             <td> <%= user.email %></td>
+             <td><%= link_to "Profile", user_path(user) %></td>
+            <td>
+              <% unless (current_user && current_user == user) %>
+                <%= link_to "Sign in as #{user.name}", become_user_path(user) %>
+              <% end %>
+            </td>
+            <td>   <%= !user.company.nil? %></td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
