@@ -1,5 +1,5 @@
 {
-  "name": "oxbridge_io",
+  "name": "synbio",
   "private": true,
   "dependencies": {
     "vivus": "^0.4.4"
